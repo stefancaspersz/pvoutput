@@ -1,5 +1,5 @@
 from os import environ
-from flask import Flask,request,redirect,url_for,jsonify,render_template,make_response,after_this_request
+from flask import Flask,request,redirect,url_for,render_template,make_response,after_this_request
 
 app = Flask(__name__)
 
