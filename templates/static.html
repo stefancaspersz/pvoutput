@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Solar Harvester</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <link rel="stylesheet" href="/static/style.css" />
+        <meta http-equiv="refresh" content="300">
+    </head>
+    <body>
+        <script src="https://pvoutput.org/portlet/r1/getstatus.jsp?sid={{ sid }}"></script>
+        <button id="toggleDarkMode">Toggle dark mode</button>
+
+        <script>
+        document.getElementById("toggleDarkMode").addEventListener("click", function() {
+	    myFunction();
+        });
+	function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+	</script>
+    </body>
+</html>
