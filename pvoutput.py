@@ -3,17 +3,6 @@ from flask import Flask,request,redirect,url_for,jsonify,render_template,make_re
 
 app = Flask(__name__)
 
-@app.route('/app',methods=['GET'])
-def hello():
-    try:
-        # this only works when a reverse proxy like nginx provides the headers
-        response = jsonify({'True-Client-IP': request.headers['True-Client-IP'],'X-Forwarded-For': request.headers['X-Forwarded-For']})
-    except:
-        # looks like we have not recieved the correct headers
-        response = jsonify({'ip': request.remote_addr})
-    print(request.headers)
-    return response
-
 @app.route('/app/pvoutput',methods=['GET'])
 def pvoutput():
     @after_this_request
